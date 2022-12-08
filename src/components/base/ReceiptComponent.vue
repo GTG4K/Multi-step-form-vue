@@ -53,4 +53,18 @@ export default {
   color: var(--marine-blue);
   font-weight: 400;
 }
+@media only screen and (max-width: 1000px) {
+  .main .title {
+    font-size: 1rem;
+  }
+  .main .price {
+    font-size: 1rem;
+  }
+  .total .title {
+    font-size: 1rem;
+  }
+  .total .price {
+    font-size: 1rem;
+  }
+}
 </style>

@@ -93,4 +93,13 @@ p {
   flex-direction: column;
   gap: 1rem;
 }
+@media only screen and (max-width: 1000px) {
+  h1 {
+    font-weight: 500;
+    font-size: 1.8rem;
+  }
+  p {
+    color: var(--color-light-500);
+  }
+}
 </style>

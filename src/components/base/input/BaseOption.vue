@@ -61,4 +61,11 @@ p {
   font-size: 0.8rem;
   color: var(--color-light-500);
 }
+@media only screen and (max-width: 1000px) {
+  .option {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+}
 </style>

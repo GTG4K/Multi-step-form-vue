@@ -6,14 +6,31 @@
       </div>
       <slot></slot>
     </div>
-    <div class="action-buttons">
+    <div v-if="width > 1000" class="action-buttons">
       <slot name="action-buttons"></slot>
     </div>
+  </div>
+  <div v-if="width <= 1000" class="action-buttons">
+    <slot name="action-buttons"></slot>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      width: window.innerWidth,
+    };
+  },
+  created() {
+    window.addEventListener('resize', this.resizeListener);
+  },
+  methods: {
+    resizeListener() {
+      this.width = window.innerWidth;
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -38,5 +55,32 @@ export default {};
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
+}
+
+@media only screen and (max-width: 1000px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .base-form {
+    position: fixed;
+    width: calc(100% - 30px);
+    height: fit-content;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: var(--color-light-100);
+    border-radius: 10px;
+    padding: 2rem 1.2rem;
+  }
+  .action-buttons {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    padding: 1rem;
+    height: fit-content;
+    background: var(--color-light-100);
+  }
 }
 </style>

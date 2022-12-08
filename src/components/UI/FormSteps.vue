@@ -1,6 +1,11 @@
 <template>
   <aside>
-    <img src="@/assets/images/bg-sidebar-desktop.svg" alt="" />
+    <img
+      v-if="width > 1000"
+      src="@/assets/images/bg-sidebar-desktop.svg"
+      alt=""
+    />
+    <img v-else src="@/assets/images/bg-sidebar-mobile.svg" alt="" />
     <nav>
       <form-step
         v-for="step in steps"
@@ -25,7 +30,16 @@ export default {
         { id: 3, title: 'Add-Ons' },
         { id: 4, title: 'Summary' },
       ],
+      width: window.innerWidth,
     };
+  },
+  created() {
+    window.addEventListener('resize', this.resizeListener);
+  },
+  methods: {
+    resizeListener() {
+      this.width = window.innerWidth;
+    },
   },
 };
 </script>
@@ -44,5 +58,26 @@ nav {
 }
 img {
   border-radius: 1.2rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  img {
+    position: fixed;
+    top: 0;
+
+    border-radius: 0;
+    width: 100%;
+    height: 200px;
+    z-index: 0;
+    object-fit: cover;
+  }
+  aside {
+    width: 100vw;
+  }
+  nav {
+    flex-direction: row;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
 }
 </style>

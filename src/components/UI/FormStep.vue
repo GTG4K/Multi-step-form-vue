@@ -99,4 +99,9 @@ p {
   color: var(--color-light-100);
   font-weight: 700;
 }
+@media only screen and (max-width: 1000px) {
+  .form-details {
+    display: none;
+  }
+}
 </style>

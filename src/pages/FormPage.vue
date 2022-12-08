@@ -26,4 +26,12 @@ main {
   border-radius: 1.2rem;
   margin: 5rem auto;
 }
+
+@media only screen and (max-width: 1000px) {
+  main {
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+}
 </style>

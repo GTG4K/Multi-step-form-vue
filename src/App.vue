@@ -34,6 +34,9 @@ export default {
   --color-light-500: hsl(231, 11%, 63%);
 
   --color-black: hsl(0, 0%, 0%);
+
+  /* Pixel */
+  --screen-size-mobile: 375px;
 }
 
 * {
@@ -41,9 +44,11 @@ export default {
   padding: 0;
   box-sizing: border-box;
   font-family: var(--font-family);
+  transition: all 0.2s ease;
 }
 
 body {
   background: var(--color-light-400);
+  min-height: 100vh;
 }
 </style>

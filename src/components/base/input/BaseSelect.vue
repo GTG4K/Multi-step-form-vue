@@ -99,4 +99,18 @@ h2 {
   font-weight: 500;
   color: var(--purplish-blue);
 }
+@media only screen and (max-width: 1000px) {
+  .checkbox-body {
+    height: fit-content;
+  }
+  .checkbox-details {
+    gap: 0.6rem;
+  }
+  h1 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+}
 </style>
