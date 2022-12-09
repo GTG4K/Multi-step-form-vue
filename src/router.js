@@ -8,6 +8,7 @@ import FormAddons from './components/FormSteps/FormAddons.vue';
 import FormInfo from './components/FormSteps/FormInfo.vue';
 import FormPlan from './components/FormSteps/FormPlan.vue';
 import FormSummary from './components/FormSteps/FormSummary.vue';
+import FormSubmitted from './components/FormSteps/FormSubmitted.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -25,6 +26,7 @@ const router = createRouter({
         { path: 'plan', component: FormPlan },
         { path: 'addons', component: FormAddons },
         { path: 'summary', component: FormSummary },
+        { path: 'submitted', component: FormSubmitted },
       ],
     },
     {

@@ -53,7 +53,7 @@ export default {
       this.$router.back();
     },
     nextForm() {
-      this.$router.push('/new/summary');
+      this.$router.push('/new/submitted');
     },
   },
   computed: {
