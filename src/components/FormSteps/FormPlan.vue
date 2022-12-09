@@ -52,7 +52,7 @@ export default {
   data() {
     return {
       selectedOption: null,
-      planSwitch: false,
+      planSwitch: true,
     };
   },
   created() {
@@ -60,8 +60,8 @@ export default {
       this.selectedOption = this.$store.getters.getPlan;
     }
     this.$store.getters.getPlanLength === 'monthly'
-      ? (this.planSwitch = true)
-      : (this.planSwitch = false);
+      ? (this.planSwitch = false)
+      : (this.planSwitch = true);
   },
   watch: {
     planSwitch() {

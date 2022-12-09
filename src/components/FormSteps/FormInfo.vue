@@ -8,18 +8,21 @@
       <base-text
         label="Name"
         placeholder="e.g. Tarkhna"
+        type="text"
         v-model="name"
         :error="nameError"
       ></base-text>
       <base-text
         label="Email Address"
         placeholder="e.g. Tarkhna@gmail.com"
+        type="email"
         v-model="email"
         :error="emailError"
       ></base-text>
       <base-text
         label="Phone Number"
         placeholder="e.g. +1 234 567 890"
+        type="number"
         v-model="number"
         :error="numberError"
       ></base-text>

@@ -7,16 +7,17 @@
     <input
       @input="updateValue"
       @blur="storeValue"
-      type="text"
+      :type="type"
       :id="value"
       :placeholder="placeholder"
+      :value="storedValue"
     />
   </div>
 </template>
 
 <script>
 export default {
-  props: ['label', 'value', 'placeholder', 'error', 'modelValue'],
+  props: ['label', 'value', 'placeholder', 'error', 'modelValue', 'type'],
   emits: ['update:modelValue'],
   data() {
     return {

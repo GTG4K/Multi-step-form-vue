@@ -6,13 +6,25 @@
     </template>
     <div class="content">
       <base-select
-        v-for="addon in addons"
-        :key="addon.title"
-        :title="addon.title"
-        :description="addon.desctiption"
-        :price="addon.price"
-        @click="toggleAddon(addon.title)"
-        v-model="selectedAddons"
+        :title="addons[0].title"
+        :description="addons[0].desctiption"
+        :price="addons[0].price"
+        @click="toggleAddon(addons[0].title)"
+        v-model="onlineService"
+      ></base-select>
+      <base-select
+        :title="addons[1].title"
+        :description="addons[1].desctiption"
+        :price="addons[1].price"
+        @click="toggleAddon(addons[1].title)"
+        v-model="largerStorage"
+      ></base-select>
+      <base-select
+        :title="addons[2].title"
+        :description="addons[2].desctiption"
+        :price="addons[2].price"
+        @click="toggleAddon(addons[2].title)"
+        v-model="customizableProfile"
       ></base-select>
     </div>
     <template v-slot:action-buttons>
@@ -43,8 +55,25 @@ export default {
           price: 2,
         },
       ],
+      onlineService: false,
+      largerStorage: false,
+      customizableProfile: false,
       selectedAddons: [],
     };
+  },
+  created() {
+    const vuexAddons = this.$store.getters.getAddons;
+    for (const addon of vuexAddons) {
+      if (addon.name === 'Online service') {
+        this.onlineService = true;
+      }
+      if (addon.name === 'Larger storage') {
+        this.largerStorage = true;
+      }
+      if (addon.name === 'Customizable Profile') {
+        this.customizableProfile = true;
+      }
+    }
   },
   watch: {},
   methods: {

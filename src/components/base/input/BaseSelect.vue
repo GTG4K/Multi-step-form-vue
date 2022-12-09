@@ -19,7 +19,7 @@ export default {
   emits: ['update:modelValue'],
   data() {
     return {
-      active: false,
+      active: this.modelValue,
     };
   },
   methods: {
